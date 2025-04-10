@@ -236,11 +236,15 @@ void loop() {
     
     // Set the 5050 channels based on machine state & inputs
     UpdateRGBBasedOnInputs(LastInputSeenTime, CurrentTime, currentFrame, MachineState, MachineStateChangedTime);
-    UpdateRGBBasedOnI2C(LastALBMessageSeenTime, LastALBMessage, LastALBMessageParameter, CurrentTime, currentFrame, MachineState, MachineStateChangedTime);
+    UpdateRGBBasedOnI2C(  LastALBMessageSeenTime, LastALBMessage, LastALBMessageParameter, 
+                          0, 0, 0, 0, // red, green, blue, duration
+                          CurrentTime, currentFrame, MachineState, MachineStateChangedTime);
   
     // Update the WS2812 Strips based on machine state & inputs
     UpdateStripsBasedOnInputs(LastInputSeenTime, CurrentTime, currentFrame, MachineState, MachineStateChangedTime);
-    UpdateStripsBasedOnI2C(LastALBMessageSeenTime, LastALBMessage, LastALBMessageParameter, CurrentTime, currentFrame, MachineState, MachineStateChangedTime);
+    UpdateStripsBasedOnI2C( LastALBMessageSeenTime, LastALBMessage, LastALBMessageParameter, 
+                            0, 0, 0, 0, // red, green, blue, duration
+                            CurrentTime, currentFrame, MachineState, MachineStateChangedTime);
   } else {
     // Show animations for brightness control
     ShowSettingsMode(SettingsMode, currentFrame);

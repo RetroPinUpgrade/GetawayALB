@@ -39,12 +39,19 @@ byte IncomingI2CDeviceAddress();
 
 void InitializeAllStrips();
 void InitializeRGBValues();
+boolean HandleI2CMessage(   unsigned long lastMessageSeenTime, byte lastMessage, byte lastParameter,
+                            byte lastRed, byte lastGreen, byte lastBlue, short lastDuration );
 boolean UpdateStripsBasedOnInputs(unsigned long  *lastInputSeenTime, unsigned long currentTime, unsigned long currentAnimationFrame, byte machineState, unsigned long machineStateChangedTime);
 boolean UpdateRGBBasedOnInputs(unsigned long  *lastInputSeenTime, unsigned long currentTime, unsigned long currentAnimationFrame, byte machineState, unsigned long machineStateChangedTime);
-boolean UpdateStripsBasedOnI2C(unsigned long lastMessageSeenTime, byte lastMessage, byte lastParameter, unsigned long currentTime, unsigned long currentAnimationFrame, byte machineState, unsigned long machineStateChangedTime);
-boolean UpdateRGBBasedOnI2C(unsigned long lastMessageSeenTime, byte lastMessage, byte lastParameter, unsigned long currentTime, unsigned long currentAnimationFrame, byte machineState, unsigned long machineStateChangedTime);
+boolean UpdateStripsBasedOnI2C(   unsigned long lastMessageSeenTime, byte lastMessage, byte lastParameter, 
+                                  byte lastRed, byte lastGreen, byte lastBlue, short lastDuration, 
+                                  unsigned long currentTime, unsigned long currentAnimationFrame, byte machineState, unsigned long machineStateChangedTime);
+boolean UpdateRGBBasedOnI2C(      unsigned long lastMessageSeenTime, byte lastMessage, byte lastParameter, 
+                                  byte lastRed, byte lastGreen, byte lastBlue, short lastDuration, 
+                                  unsigned long currentTime, unsigned long currentAnimationFrame, byte machineState, unsigned long machineStateChangedTime);
 boolean UpdateStripsBasedOnLampBus(unsigned long currentTime, unsigned long currentAnimationFrame, byte machineState, unsigned long machineStateChangedTime);
 
+byte GetSettingValue(byte settingNum);
 boolean ReadSettings();
 boolean WriteSettings();
 byte AdvanceSettingsMode(byte oldSettingsMode);

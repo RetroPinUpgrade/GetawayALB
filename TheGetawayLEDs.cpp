@@ -665,7 +665,7 @@ boolean UpdateRGBBasedOnInputs(unsigned long  *lastInputSeenTime, unsigned long 
   (void)machineStateChangedTime;
   return false;
 }
-boolean UpdateStripsBasedOnI2C(unsigned long lastMessageSeenTime, byte lastMessage, byte lastParameter, unsigned long currentTime, unsigned long currentAnimationFrame, byte machineState, unsigned long machineStateChangedTime) {
+boolean UpdateStripsBasedOnI2C(unsigned long lastMessageSeenTime, byte lastMessage, byte lastParameter, byte red, byte green, byte blue, short duration, unsigned long currentTime, unsigned long currentAnimationFrame, byte machineState, unsigned long machineStateChangedTime) {
   // This accessory doesn't use this function
   (void)lastMessageSeenTime;
   (void)lastMessage;
@@ -674,9 +674,13 @@ boolean UpdateStripsBasedOnI2C(unsigned long lastMessageSeenTime, byte lastMessa
   (void)currentAnimationFrame;
   (void)machineState;
   (void)machineStateChangedTime;
+  (void)red;
+  (void)green;
+  (void)blue;
+  (void)duration;
   return false;
 }
-boolean UpdateRGBBasedOnI2C(unsigned long lastMessageSeenTime, byte lastMessage, byte lastParameter, unsigned long currentTime, unsigned long currentAnimationFrame, byte machineState, unsigned long machineStateChangedTime) {
+boolean UpdateRGBBasedOnI2C(unsigned long lastMessageSeenTime, byte lastMessage, byte lastParameter, byte red, byte green, byte blue, short duration, unsigned long currentTime, unsigned long currentAnimationFrame, byte machineState, unsigned long machineStateChangedTime) {
   // This accessory doesn't use this function
   (void)lastMessageSeenTime;
   (void)lastMessage;
@@ -685,6 +689,10 @@ boolean UpdateRGBBasedOnI2C(unsigned long lastMessageSeenTime, byte lastMessage,
   (void)currentAnimationFrame;
   (void)machineState;
   (void)machineStateChangedTime;
+  (void)red;
+  (void)green;
+  (void)blue;
+  (void)duration;
   return false;
 }
 
